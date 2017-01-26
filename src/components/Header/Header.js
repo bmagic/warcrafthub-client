@@ -1,18 +1,39 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import {Link,IndexLink} from 'react-router'
 import './Header.scss'
 
-export const Header = () => (
-  <div>
-    <h1>React Redux Starter Kit</h1>
-    <IndexLink to='/' activeClassName='route--active'>
-      Home
-    </IndexLink>
-    {' · '}
-    <Link to='/counter' activeClassName='route--active'>
-      Counter
-    </Link>
-  </div>
-)
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  render() {
+    return (
+      <Navbar color="faded" light toggleable>
+        <NavbarToggler right onClick={this.toggle}/>
+        <IndexLink href="/">reactstrap</IndexLink>
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <Link className='nav-link' href="/counter">Components</Link>
+            </NavItem>
+
+          </Nav>
+        </Collapse>
+      </Navbar>
+    )
+  }
+}
+
 
 export default Header
