@@ -1,6 +1,8 @@
 import React from 'react'
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import {Link,IndexLink} from 'react-router'
+import {Navbar, Nav, NavItem} from 'react-bootstrap'
+import {LinkContainer} from 'react-router-bootstrap'
+import {IndexLink} from 'react-router'
+
 import './Header.scss'
 
 class Header extends React.Component {
@@ -12,28 +14,34 @@ class Header extends React.Component {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
     return (
-      <Navbar color="faded" light toggleable>
-        <NavbarToggler right onClick={this.toggle}/>
-        <IndexLink href="/">reactstrap</IndexLink>
-        <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <Link className='nav-link' href="/counter">Components</Link>
-            </NavItem>
-
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <IndexLink to="/">
+              Warcrafthub
+            </IndexLink>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav>
+            <LinkContainer to="/counter">
+              <NavItem >Counter</NavItem>
+            </LinkContainer>
           </Nav>
-        </Collapse>
+        </Navbar.Collapse>
       </Navbar>
     )
   }
 }
-
 
 export default Header
