@@ -1,16 +1,16 @@
 import React from 'react'
 import './CharacterView.scss'
+import CharacterTitle from './CharacterTitle'
 
 
 class CharacterView extends React.Component {
 
-  render(){
-   const { params,character } = this.props
-    return(
+  render() {
+    const {character} = this.props;
+    console.log(character);
+    return (
       <div>
-        <h4>Character</h4>
-        {character.region}/{character.realm}/{character.name}
-
+        <CharacterTitle region={character.region} realm={character.realm} name={character.name} faction={1} class_={11}/>
 
       </div>
     )
