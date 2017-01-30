@@ -19,7 +19,11 @@ export default (store) => ({
       store.dispatch(actions.fetchCharacter(nextState.params.region,nextState.params.realm,nextState.params.name))
 
       /*  Return getComponent   */
-      cb(null, Character)
+      cb(null, Character);
+
+      /*store.dispatch(actions.fetchCharacter(nextState.params.region,nextState.params.realm,nextState.params.name)) // set global spinner
+        .then(() => cb(null, Character)) // success, data loaded, render component
+        .catch(cb) // return error to router (or render NotFoundComponent)*/
 
       /* Webpack named bundle   */
     }, 'character')
