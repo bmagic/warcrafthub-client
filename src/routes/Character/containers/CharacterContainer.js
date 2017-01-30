@@ -9,7 +9,8 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-  character: state.character
+  character: state.character,
+  errors:state.errors
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterView)

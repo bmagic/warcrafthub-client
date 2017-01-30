@@ -1,8 +1,12 @@
+import {CALL_API} from '../../../middlewares/api'
+
+
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const CHARACTER_FETCH_REQUEST = 'CHARACTER_FETCH_REQUEST'
-export const CHARACTER_FETCH_SUCCESS = 'CHARACTER_FETCH_SUCCESS'
+export const CHARACTER_REQUEST = 'CHARACTER_REQUEST'
+export const CHARACTER_SUCCESS = 'CHARACTER_SUCCESS'
+export const CHARACTER_FAILURE = 'CHARACTER_FAILURE'
 
 // ------------------------------------
 // Actions
@@ -11,41 +15,35 @@ export const CHARACTER_FETCH_SUCCESS = 'CHARACTER_FETCH_SUCCESS'
  returns a function for lazy evaluation. It is incredibly useful for
  creating async actions, especially when combined with redux-thunk! */
 
-export const fetchCharacter = (region, realm, name) => {
-  return (dispatch) => {
-    dispatch({
-      type: CHARACTER_FETCH_REQUEST
-    });
-    fetch('https://api.warcrafthub.com/api/v1/characters/' + region + '/' + realm + '/' + name)
-      .then(response => {
-        response.json()
-          .then(character => {
-            dispatch({
-              type: CHARACTER_FETCH_SUCCESS,
-              payload: character
-            })
-          })
-      })
-      .catch(err => {
-        console.log(err);
-      })
+
+const fetchCharacter = (region, realm, name) => ({
+  [CALL_API]: {
+    types: [CHARACTER_REQUEST, CHARACTER_SUCCESS, CHARACTER_FAILURE],
+    endpoint: `characters/${region}/${realm}/${name}`,
   }
+})
+
+export const loadCharacter = (region, realm, name) => (dispatch) => {
+  return dispatch(fetchCharacter(region, realm, name))
 }
 
 export const actions = {
-  fetchCharacter
+  loadCharacter
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [CHARACTER_FETCH_REQUEST]: (state) => {
-    return Object.assign({}, state, { isLoading: true })
+  [CHARACTER_REQUEST]: (state) => {
+    return Object.assign({}, state, {isLoading: true, hasError: false})
   },
-  [CHARACTER_FETCH_SUCCESS]: (state, action) => {
-    return Object.assign({}, state, { isLoading: false },{data:action.payload})
-  }
+  [CHARACTER_SUCCESS]: (state, action) => {
+    return Object.assign({}, state, {isLoading: false}, {data: action.response})
+  },
+  [CHARACTER_FAILURE]: (state, action) => {
+    return Object.assign({}, state, {isLoading: false, hasError: true})
+  },
 }
 
 // ------------------------------------

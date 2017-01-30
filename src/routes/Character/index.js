@@ -12,11 +12,13 @@ export default (store) => ({
       const Character = require('./containers/CharacterContainer').default
       const reducer = require('./modules/character').default
       const actions = require('./modules/character').actions
+      const errorActions = require('../../store/errors').actions
 
       /*  Add the reducer to the store on key 'character'  */
       injectReducer(store, { key: 'character', reducer })
 
-      store.dispatch(actions.fetchCharacter(nextState.params.region,nextState.params.realm,nextState.params.name))
+      store.dispatch(errorActions.resetErrorMessage())
+      store.dispatch(actions.loadCharacter(nextState.params.region,nextState.params.realm,nextState.params.name))
 
       /*  Return getComponent   */
       cb(null, Character);
