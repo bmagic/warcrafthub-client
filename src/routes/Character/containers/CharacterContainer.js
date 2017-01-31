@@ -1,6 +1,5 @@
-import {connect} from 'react-redux'
-import {fetchCharacter} from '../modules/character'
-
+import { connect } from 'react-redux'
+import { fetchCharacter } from '../modules/character'
 
 import CharacterView from '../components/CharacterView'
 

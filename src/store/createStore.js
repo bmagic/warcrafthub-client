@@ -5,12 +5,11 @@ import makeRootReducer from './reducers'
 import { updateLocation } from './location'
 import api from '../middlewares/api'
 
-
 export default (initialState = {}) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
-  const middleware = [thunk,api]
+  const middleware = [thunk, api]
 
   // ======================================================
   // Store Enhancers

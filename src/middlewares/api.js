@@ -15,7 +15,6 @@ const callApi = (endpoint) => {
     )
 }
 
-
 // Action key that carries API call info interpreted by this Redux middleware.
 export const CALL_API = Symbol('Call API')
 
@@ -27,8 +26,8 @@ export default store => next => action => {
     return next(action)
   }
 
-  let {endpoint} = callAPI
-  const {types} = callAPI
+  let { endpoint } = callAPI
+  const { types } = callAPI
 
   if (typeof endpoint === 'function') {
     endpoint = endpoint(store.getState())
@@ -51,7 +50,7 @@ export default store => next => action => {
   }
 
   const [ requestType, successType, failureType ] = types
-  next(actionWith({type: requestType}))
+  next(actionWith({ type: requestType }))
 
   return callApi(endpoint).then(
     response => next(actionWith({

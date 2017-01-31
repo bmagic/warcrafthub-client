@@ -1,32 +1,32 @@
 import React from 'react'
-import {Navbar, Nav, NavItem} from 'react-bootstrap'
-import {LinkContainer} from 'react-router-bootstrap'
-import {IndexLink} from 'react-router'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+import { IndexLink } from 'react-router'
 
 import './Header.scss'
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    this.toggle = this.toggle.bind(this);
+    this.toggle = this.toggle.bind(this)
     this.state = {
       isOpen: false
-    };
+    }
   }
 
-  toggle() {
+  toggle () {
     this.setState({
       isOpen: !this.state.isOpen
-    });
+    })
   }
 
-  render() {
+  render () {
     return (
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <IndexLink to="/">
+            <IndexLink to='/'>
               Warcrafthub
             </IndexLink>
           </Navbar.Brand>
@@ -34,16 +34,16 @@ class Header extends React.Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <LinkContainer to="/counter">
+            <LinkContainer to='/counter'>
               <NavItem >Counter</NavItem>
             </LinkContainer>
-            <LinkContainer to="/character/eu/Archimonde/Bmagic">
+            <LinkContainer to='/character/eu/Archimonde/Bmagic'>
               <NavItem >Bmagic</NavItem>
             </LinkContainer>
-            <LinkContainer to="/character/eu/Archimonde/Alogon">
+            <LinkContainer to='/character/eu/Archimonde/Alogon'>
               <NavItem >Alogon</NavItem>
             </LinkContainer>
-            <LinkContainer to="/character/eu/Archimonde/Errrr">
+            <LinkContainer to='/character/eu/Archimonde/Errrr'>
               <NavItem >Error</NavItem>
             </LinkContainer>
           </Nav>
