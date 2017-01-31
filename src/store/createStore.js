@@ -4,12 +4,15 @@ import { browserHistory } from 'react-router'
 import makeRootReducer from './reducers'
 import { updateLocation } from './location'
 import api from '../middlewares/api'
+import { loadingBarMiddleware } from 'react-redux-loading-bar'
 
 export default (initialState = {}) => {
   // ======================================================
   // Middleware Configuration
   // ======================================================
-  const middleware = [thunk, api]
+  const middleware = [thunk, api, loadingBarMiddleware({
+    promiseTypeSuffixes: ['REQUEST', 'SUCCESS', 'FAILURE'],
+  })]
 
   // ======================================================
   // Store Enhancers
