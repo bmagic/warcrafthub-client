@@ -10,8 +10,8 @@ export const CharacterView = (props) => {
           region={props.character.data.region}
           realm={props.character.data.realm}
           name={props.character.data.name}
-          faction={1}
-          class_={11} />
+          faction={props.character.data.faction}
+          class_={props.character.data.class} />
       </div>
     )
   } else {
@@ -26,7 +26,9 @@ CharacterView.propTypes = {
     data: React.PropTypes.shape({
       region: React.PropTypes.string.isRequired,
       realm: React.PropTypes.string.isRequired,
-      name: React.PropTypes.string.isRequired
+      name: React.PropTypes.string.isRequired,
+      faction: React.PropTypes.number.isRequired,
+      class:React.PropTypes.number.isRequired
     })
   })
 }
