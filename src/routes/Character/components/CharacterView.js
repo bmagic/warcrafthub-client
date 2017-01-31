@@ -1,12 +1,9 @@
 import React from 'react'
 import './CharacterView.scss'
 import CharacterTitle from './CharacterTitle'
-import ErrorsMessage from '../../../components/ErrorsMessage'
 
 export const CharacterView = (props) => {
-  if (props.character.hasError === true) {
-    return <ErrorsMessage errors={props.errors}/>
-  } else if (props.character.isLoading === false) {
+  if (props.character.isLoading === false && props.character.hasError === false) {
     return (
       <div>
         <CharacterTitle
@@ -14,15 +11,12 @@ export const CharacterView = (props) => {
           realm={props.character.data.realm}
           name={props.character.data.name}
           faction={1}
-          class_={11}/>
-        <ErrorsMessage errors={props.errors}/>
+          class_={11} />
       </div>
     )
+  } else {
+    return null
   }
-  else {
-    return null;
-  }
-
 }
 
 CharacterView.propTypes = {
@@ -34,8 +28,7 @@ CharacterView.propTypes = {
       realm: React.PropTypes.string.isRequired,
       name: React.PropTypes.string.isRequired
     })
-  }),
-  errors: React.PropTypes.array.isRequired
+  })
 }
 
 export default CharacterView

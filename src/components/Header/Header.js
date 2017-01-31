@@ -1,14 +1,13 @@
 import React from 'react'
-import {Navbar, Nav, NavItem} from 'react-bootstrap'
-import {LinkContainer} from 'react-router-bootstrap'
-import {IndexLink} from 'react-router'
+import { Navbar, Nav, NavItem } from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+import { IndexLink } from 'react-router'
 import LoadingBar from 'react-redux-loading-bar'
-
 
 import './Header.scss'
 
 class Header extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.toggle = this.toggle.bind(this)
@@ -17,13 +16,13 @@ class Header extends React.Component {
     }
   }
 
-  toggle() {
+  toggle () {
     this.setState({
       isOpen: !this.state.isOpen
     })
   }
 
-  render() {
+  render () {
     return (
       <div>
         <Navbar>
@@ -52,8 +51,8 @@ class Header extends React.Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <LoadingBar className="loading"/>
-  </div>
+        <LoadingBar className='loading' />
+      </div>
     )
   }
 }

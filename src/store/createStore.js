@@ -11,7 +11,7 @@ export default (initialState = {}) => {
   // Middleware Configuration
   // ======================================================
   const middleware = [thunk, api, loadingBarMiddleware({
-    promiseTypeSuffixes: ['REQUEST', 'SUCCESS', 'FAILURE'],
+    promiseTypeSuffixes: ['REQUEST', 'SUCCESS', 'FAILURE']
   })]
 
   // ======================================================

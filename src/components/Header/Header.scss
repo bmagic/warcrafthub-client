@@ -2,10 +2,9 @@
 
 .loading{
   z-index: 10;
-  height: 1px;
-  background-color: red;
+  height: 2px;
+  background-color: $white;
   position: absolute;
-  bottom:1px;
 }
 
 .navbar {

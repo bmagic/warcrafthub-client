@@ -1,4 +1,5 @@
-const API_ROOT = 'https://api.warcrafthub.com/api/v1/'
+import config from '../config'
+const API_ROOT = config.API_ROOT
 
 const callApi = (endpoint) => {
   const fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint
