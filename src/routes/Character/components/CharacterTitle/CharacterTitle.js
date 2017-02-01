@@ -4,23 +4,32 @@ import './CharacterTitle.scss'
 import horde from './assets/horde.png'
 import alliance from './assets/alliance.png'
 
-import { Row, Col } from 'react-bootstrap'
+import {Row, Col, Media} from 'react-bootstrap'
 
 export const CharacterTitle = (props) => (
   <div className='character-title'>
     <div className='container'>
-      <Row>
-        <Col xs={4} sm={3} md={2} lg={1} >
+      <div className="media">
+        <div className="media-left media-middle">
           {props.faction === 0 &&
-          <img src={alliance} className='img-responsive' />
+          <img src={alliance}/>
           }
           {props.faction === 1 &&
-          <img src={horde} className='img-responsive' />
+          <img src={horde}/>
           }
+        </div>
+        <div className="media-body">
+          <h1 className={classNames('class-' + props.class_, "media-heading")}>{props.name}</h1>
+          <h2>{props.region.toUpperCase()}-{props.realm}</h2>
+          Guerrier Orc de level {props.level}
+        </div>
+      </div>
+      <Row>
+        <Col xs={4} sm={3} md={2} lg={1}>
+
         </Col>
         <Col xs={8} sm={9} md={10} lg={11}>
-          <h1 className={classNames('class-' + props.class_)}>{props.name}</h1>
-          <h2 className={classNames('faction-' + props.faction)}>{props.region.toUpperCase()}-{props.realm}</h2>
+
         </Col>
       </Row>
     </div>
@@ -32,7 +41,8 @@ CharacterTitle.propTypes = {
   realm: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
   faction: React.PropTypes.number.isRequired,
-  class_: React.PropTypes.number.isRequired
+  class_: React.PropTypes.number.isRequired,
+  level: React.PropTypes.number
 }
 
 export default CharacterTitle
