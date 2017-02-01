@@ -1,4 +1,5 @@
-import { CALL_API } from '../../../middlewares/api'
+import { CALL_API } from 'redux-api-middleware'
+import config from '../../../config'
 
 // ------------------------------------
 // Constants
@@ -10,14 +11,12 @@ export const CHARACTER_FAILURE = 'CHARACTER_FAILURE'
 // ------------------------------------
 // Actions
 // ------------------------------------
-/*  This is a thunk, meaning it is a function that immediately
- returns a function for lazy evaluation. It is incredibly useful for
- creating async actions, especially when combined with redux-thunk! */
-
 const fetchCharacter = (region, realm, name) => ({
   [CALL_API]: {
     types: [CHARACTER_REQUEST, CHARACTER_SUCCESS, CHARACTER_FAILURE],
-    endpoint: `characters/${region}/${realm}/${name}`
+    endpoint: config.API_ROOT + `characters/${region}/${realm}/${name}` +
+    `?items=items,averageItemLevel,averageItemLevelEquipped`,
+    method: 'GET'
   }
 })
 
@@ -37,9 +36,9 @@ const ACTION_HANDLERS = {
     return Object.assign({}, state, { isLoading: true, hasError: false })
   },
   [CHARACTER_SUCCESS]: (state, action) => {
-    return Object.assign({}, state, { isLoading: false }, { data: action.response })
+    return Object.assign({}, state, { isLoading: false }, { data: action.payload })
   },
-  [CHARACTER_FAILURE]: (state, action) => {
+  [CHARACTER_FAILURE]: (state) => {
     return Object.assign({}, state, { isLoading: false, hasError: true })
   }
 }

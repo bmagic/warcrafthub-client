@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import ErrorMessages from '../components/ErrorMessages'
+import ErrorMessages from './ErrorMessages'
 
 const mapDispatchToProps = {}
 

@@ -11,6 +11,7 @@ $monk: #00FF96;
 $druid: #FF7D0A;
 $demon_hunter: #a330c9;
 
+
 /* Warrior */
 .class-1 {
   color: $warrior
@@ -69,4 +70,16 @@ $demon_hunter: #a330c9;
 /* Demon hunter */
 .class-12 {
   color: $demon_hunter;
+}
+
+$alliance:#0078FF;
+$horde:#B30000;
+/*Alliance */
+.faction-0{
+  color: $alliance
+}
+
+/* Horde */
+.faction-1{
+  color: $horde
 }
