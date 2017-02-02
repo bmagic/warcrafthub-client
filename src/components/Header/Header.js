@@ -39,7 +39,7 @@ class Header extends React.Component {
               <LinkContainer to='/counter'>
                 <NavItem >Counter</NavItem>
               </LinkContainer>
-              <LinkContainer to='/character/eu/Aegwynn/Theass'>
+              <LinkContainer to='/character/eu/Archimonde/Alogon'>
                 <NavItem >Charact</NavItem>
               </LinkContainer>
               <LinkContainer to='/character/eu/Archimonde/Errrr'>

@@ -1,7 +1,11 @@
 import { injectReducer } from '../../store/reducers'
+import PvE from './routes/PvE'
 
 export default (store) => ({
   path : 'character/:region/:realm/:name',
+  childRoutes: [
+    PvE(store)
+  ],
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
     /*  Webpack - use 'require.ensure' to create a split point

@@ -38,7 +38,7 @@ UpdateButton.propTypes = {
   realm: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
   postUpdate: React.PropTypes.func.isRequired,
-  children:React.PropTypes.element.isRequired
+  children:React.PropTypes.array.isRequired
 }
 
 export default UpdateButton
