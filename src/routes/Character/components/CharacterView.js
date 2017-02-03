@@ -1,6 +1,6 @@
 import React from 'react'
 import {Col, Row, Nav, NavItem} from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
+import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap'
 import ErrorMessages from '../../../containers/ErrorMessages'
 import CharacterTitle from './CharacterTitle'
 import UpdateButton from '../../../containers/UpdateButton'
@@ -31,12 +31,18 @@ export const CharacterView = (props) => {
           </Row>
           <Row>
             <Col md={12}>
-              <Nav>
-                <LinkContainer to={props.location.pathname+'/pve'}>
-                  <NavItem >Counter</NavItem>
+              <Nav bsStyle="pills" justified>
+                <IndexLinkContainer to={'/character/'+props.character.data.region+'/'+props.character.data.realm+'/'+props.character.data.name}>
+                  <NavItem >Profile</NavItem>
+                </IndexLinkContainer>
+                <LinkContainer to={'/character/'+props.character.data.region+'/'+props.character.data.realm+'/'+props.character.data.name+'/recruitment'}>
+                  <NavItem >Recruitment</NavItem>
                 </LinkContainer>
-                <LinkContainer to=''>
-                  <NavItem >Charact</NavItem>
+                <LinkContainer to={'/character/'+props.character.data.region+'/'+props.character.data.realm+'/'+props.character.data.name+'/pve'}>
+                  <NavItem >PvE</NavItem>
+                </LinkContainer>
+                <LinkContainer to={'/character/'+props.character.data.region+'/'+props.character.data.realm+'/'+props.character.data.name+'/pvp'}>
+                  <NavItem >PvP</NavItem>
                 </LinkContainer>
 
               </Nav>
