@@ -1,16 +1,8 @@
 @import '../../../../../../styles/base';
 
-.character-item{
-  border-top:1px solid $white;
-  padding:0.6rem;
-  background-color: $black;
-  a{
-    color:inherit;
-    img{
-      margin-right:1rem;
-    }
+.character-item-stats{
+  h2{
+    font-size:2rem;
   }
-  &.mainHand,&.offHand{
-    border-bottom:1px solid $white;
-  }
+
 }
