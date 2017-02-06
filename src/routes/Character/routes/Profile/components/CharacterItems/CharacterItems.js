@@ -14,20 +14,20 @@ class CharacterItems extends React.Component {
     const region = this.props.region
     if (items === undefined) { return null }
     itemsLeftKeys.forEach(function (key) {
-      itemsLeft.push(<CharacterItem key={key} region={region} slot={key} item={items[key]} />)
+      itemsLeft.push(<CharacterItem key={key} side={'left'} region={region} slot={key} item={items[key]} />)
     })
 
     itemsRightKeys.forEach(function (key) {
-      itemsRight.push(<CharacterItem key={key} region={region} slot={key} item={items[key]} />)
+      itemsRight.push(<CharacterItem key={key} side={'right'}  region={region} slot={key} item={items[key]} />)
     })
 
     return (
       <div className='character-items'>
         <Row>
-          <Col md={6} className='left'>
+          <Col md={6}>
             {itemsLeft}
           </Col>
-          <Col md={6} className='right'>
+          <Col md={6}>
             {itemsRight}
           </Col>
         </Row>

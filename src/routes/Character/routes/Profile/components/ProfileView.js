@@ -1,20 +1,37 @@
 import React from 'react'
-import { Row, Col,Panel } from 'react-bootstrap'
+import {Row, Col, Panel} from 'react-bootstrap'
 import CharacterItems from './CharacterItems'
-import CharacterItemStats from './CharacterItemStats'
+import CharacterItemSummary from './CharacterItemSummary'
+import CharacterItemIlvl from './CharacterItemIlvl'
 
 export const ProfileView = (props) => {
   return (
     <div className='character-profile'>
       <Row>
-        <Col md={6}>
+        <Col md={9}>
+          <Row>
+            <Col md={12}>
+              <CharacterItemIlvl averageItemLevel={props.character.data.averageItemLevel}
+                                 averageItemLevelEquipped={props.character.data.averageItemLevelEquipped}/>
+            </Col>
+            <Col md={12}>
+              <CharacterItems items={props.character.data.items} region={props.character.data.region}/>
+            </Col>
+          </Row>
+        </Col>
+        <Col md={3}>
           <Panel>
-            <div>Ilvl: 864</div>
-            <div>Ilvl bag: 861</div>
-            <div>Artifact Rank: 54</div>
-            <div>T19: 2</div>
+            Une colonne ici
           </Panel>
-
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6}>
+          <CharacterItemSummary averageItemLevel={props.character.data.averageItemLevel}
+                                averageItemLevelEquipped={props.character.data.averageItemLevelEquipped}
+                                items={props.character.data.items}
+                                class={props.character.data.class}
+          />
         </Col>
         <Col md={6}>
           <Panel>
@@ -24,7 +41,6 @@ export const ProfileView = (props) => {
             <div>Low gem on feet</div>
             <div>Missing enchant on chest</div>
           </Panel>
-
         </Col>
       </Row>
       <Row>
@@ -32,13 +48,12 @@ export const ProfileView = (props) => {
           <Panel>
             <h3>Items</h3>
           </Panel>
-          {/*<CharacterItemStats averageItemLevel={props.character.data.averageItemLevel}*/}
-            {/*averageItemLevelEquipped={props.character.data.averageItemLevelEquipped} />*/}
+
         </Col>
       </Row>
       <Row>
         <Col md={12}>
-          <CharacterItems items={props.character.data.items} region={props.character.data.region} />
+          <CharacterItems items={props.character.data.items} region={props.character.data.region}/>
         </Col>
       </Row>
       <Row>
