@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import CharacterItems from './CharacterItems'
 import CharacterItemStats from './CharacterItemStats'
 
@@ -8,7 +8,8 @@ export const ProfileView = (props) => {
     <div className='character-profile'>
       <Row>
         <Col md={12}>
-          <CharacterItemStats averageItemLevel={props.character.data.averageItemLevel} averageItemLevelEquipped={props.character.data.averageItemLevelEquipped}/>
+          <CharacterItemStats averageItemLevel={props.character.data.averageItemLevel}
+            averageItemLevelEquipped={props.character.data.averageItemLevelEquipped} />
         </Col>
       </Row>
       <Row>

@@ -31,7 +31,8 @@ export const CharacterView = (props) => {
           </Row>
           <Row>
             <Col md={12}>
-              <CharacterNav region={props.character.data.region} realm={props.character.data.realm} name={props.character.data.name} />
+              <CharacterNav region={props.character.data.region} realm={props.character.data.realm}
+                name={props.character.data.name} />
             </Col>
           </Row>
           {props.children}
@@ -71,7 +72,8 @@ CharacterView.propTypes = {
     hasError: React.PropTypes.bool.isRequired,
     data: React.PropTypes.object
   }),
-  params: React.PropTypes.object
+  params: React.PropTypes.object,
+  children: React.PropTypes.element
 }
 
 export default CharacterView

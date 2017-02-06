@@ -1,4 +1,3 @@
-
 export default (store) => ({
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
@@ -10,7 +9,8 @@ export default (store) => ({
       const PvE = require('./containers/Profile').default
       const actions = require('../../modules/character').actions
 
-      store.dispatch(actions.loadCharacter(nextState.params.region, nextState.params.realm, nextState.params.name, ['items', 'averageItemLevel', 'averageItemLevelEquipped']))
+      store.dispatch(actions.loadCharacter(nextState.params.region, nextState.params.realm, nextState.params.name,
+        ['items', 'averageItemLevel', 'averageItemLevelEquipped']))
 
       /*  Return getComponent   */
       cb(null, PvE)

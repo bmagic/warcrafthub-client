@@ -1,6 +1,5 @@
-
 export default (store) => ({
-  path : 'pve',
+  path: 'pve',
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
     /*  Webpack - use 'require.ensure' to create a split point
@@ -11,7 +10,8 @@ export default (store) => ({
       const PvE = require('./containers/PvEContainer').default
       const actions = require('../../modules/character').actions
 
-      store.dispatch(actions.loadCharacter(nextState.params.region, nextState.params.realm, nextState.params.name, ['progress']))
+      store.dispatch(actions.loadCharacter(nextState.params.region, nextState.params.realm, nextState.params.name,
+        ['progress']))
       /*  Return getComponent   */
       cb(null, PvE)
 

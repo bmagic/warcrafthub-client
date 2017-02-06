@@ -1,9 +1,9 @@
 import React from 'react'
-import {Panel} from 'react-bootstrap'
+import { Panel } from 'react-bootstrap'
 import './CharacterItemStats.scss'
 
 export const CharacterItemStats = (props) => (
-  <div className="character-item-stats">
+  <div className='character-item-stats'>
     <Panel>
       {props.averageItemLevel}
       {props.averageItemLevelEquipped}
