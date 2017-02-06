@@ -1,9 +1,9 @@
 import React from 'react'
-import {Col, Row, Nav, NavItem} from 'react-bootstrap'
-import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import ErrorMessages from '../../../containers/ErrorMessages'
 import CharacterTitle from './CharacterTitle'
 import UpdateButton from '../../../containers/UpdateButton'
+import CharacterNav from './CharacterNav'
 import 'font-awesome/scss/font-awesome.scss'
 
 import './CharacterView.scss'
@@ -24,28 +24,14 @@ export const CharacterView = (props) => {
           <Row>
             <Col md={12}>
               <UpdateButton type='character' region={props.character.data.region} realm={props.character.data.realm}
-                            name={props.character.data.name}>
-                <i className='fa fa-refresh' aria-hidden='true'/> Update character
+                name={props.character.data.name}>
+                <i className='fa fa-refresh' aria-hidden='true' /> Update character
               </UpdateButton>
             </Col>
           </Row>
           <Row>
             <Col md={12}>
-              <Nav bsStyle="pills" justified>
-                <IndexLinkContainer to={'/character/'+props.character.data.region+'/'+props.character.data.realm+'/'+props.character.data.name}>
-                  <NavItem >Profile</NavItem>
-                </IndexLinkContainer>
-                <LinkContainer to={'/character/'+props.character.data.region+'/'+props.character.data.realm+'/'+props.character.data.name+'/recruitment'}>
-                  <NavItem >Recruitment</NavItem>
-                </LinkContainer>
-                <LinkContainer to={'/character/'+props.character.data.region+'/'+props.character.data.realm+'/'+props.character.data.name+'/pve'}>
-                  <NavItem >PvE</NavItem>
-                </LinkContainer>
-                <LinkContainer to={'/character/'+props.character.data.region+'/'+props.character.data.realm+'/'+props.character.data.name+'/pvp'}>
-                  <NavItem >PvP</NavItem>
-                </LinkContainer>
-
-              </Nav>
+              <CharacterNav region={props.character.data.region} realm={props.character.data.realm} name={props.character.data.name} />
             </Col>
           </Row>
           {props.children}
@@ -60,15 +46,15 @@ export const CharacterView = (props) => {
           realm={props.params.realm}
           name={props.params.name}
           faction={-1}
-          class_={-1}/>
+          class_={-1} />
         <div className='container content'>
           <ErrorMessages />
           <Row>
             <Col md={12}>
               <p>Oops, this character is missing. Click on the button below to import him.</p>
               <UpdateButton type='character' region={props.params.region} realm={props.params.realm}
-                            name={props.params.name}>
-                <i className='fa fa-download' aria-hidden='true'/> Import Character</UpdateButton>
+                name={props.params.name}>
+                <i className='fa fa-download' aria-hidden='true' /> Import Character</UpdateButton>
             </Col>
           </Row>
         </div>

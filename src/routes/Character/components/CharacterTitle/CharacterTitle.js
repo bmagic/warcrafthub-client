@@ -3,35 +3,27 @@ import classNames from 'classnames'
 import './CharacterTitle.scss'
 import horde from './assets/horde.png'
 import alliance from './assets/alliance.png'
-
-import {Row, Col, Media} from 'react-bootstrap'
+import { Media } from 'react-bootstrap'
 
 export const CharacterTitle = (props) => (
   <div className='character-title'>
     <div className='container'>
-      <div className="media">
-        <div className="media-left media-middle">
+      <Media>
+        <Media.Left>
           {props.faction === 0 &&
-          <img src={alliance}/>
+          <img src={alliance} />
           }
           {props.faction === 1 &&
-          <img src={horde}/>
+          <img src={horde} />
           }
-        </div>
-        <div className="media-body">
-          <h1 className={classNames('class-' + props.class_, "media-heading")}>{props.name}</h1>
+        </Media.Left>
+        <Media.Body>
+          <Media.Heading className={classNames('class-' + props.class_)} componentClass='h1'>
+            {props.name}
+          </Media.Heading>
           <h2>{props.region.toUpperCase()}-{props.realm}</h2>
-          Guerrier Orc de level {props.level}
-        </div>
-      </div>
-      <Row>
-        <Col xs={4} sm={3} md={2} lg={1}>
-
-        </Col>
-        <Col xs={8} sm={9} md={10} lg={11}>
-
-        </Col>
-      </Row>
+        </Media.Body>
+      </Media>
     </div>
   </div>
 )

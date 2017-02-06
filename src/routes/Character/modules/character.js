@@ -11,17 +11,16 @@ export const CHARACTER_FAILURE = 'CHARACTER_FAILURE'
 // ------------------------------------
 // Actions
 // ------------------------------------
-const fetchCharacter = (region, realm, name) => ({
+const fetchCharacter = (region, realm, name, fields) => ({
   [CALL_API]: {
     types: [CHARACTER_REQUEST, CHARACTER_SUCCESS, CHARACTER_FAILURE],
-    endpoint: config.API_ROOT + `characters/${region}/${realm}/${name}` +
-    `?items=items,averageItemLevel,averageItemLevelEquipped`,
+    endpoint: config.API_ROOT + `characters/${region}/${realm}/${name}?fields=${fields.join(',')}`,
     method: 'GET'
   }
 })
 
-export const loadCharacter = (region, realm, name) => (dispatch) => {
-  return dispatch(fetchCharacter(region, realm, name))
+export const loadCharacter = (region, realm, name, fields) => (dispatch) => {
+  return dispatch(fetchCharacter(region, realm, name, fields))
 }
 
 export const actions = {

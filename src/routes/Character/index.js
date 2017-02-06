@@ -6,7 +6,7 @@ export default (store) => ({
   path : 'character/:region/:realm/:name',
   indexRoute  : Profile(store),
   childRoutes: [
-    PvE(store),
+    PvE(store)
   ],
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
@@ -17,12 +17,9 @@ export default (store) => ({
        dependencies for bundling   */
       const Character = require('./containers/CharacterContainer').default
       const reducer = require('./modules/character').default
-      const actions = require('./modules/character').actions
 
       /*  Add the reducer to the store on key 'character'  */
       injectReducer(store, { key: 'character', reducer })
-
-      store.dispatch(actions.loadCharacter(nextState.params.region, nextState.params.realm, nextState.params.name))
 
       /*  Return getComponent   */
       cb(null, Character)

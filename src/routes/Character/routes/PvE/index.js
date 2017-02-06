@@ -9,7 +9,9 @@ export default (store) => ({
       /*  Webpack - use require callback to define
        dependencies for bundling   */
       const PvE = require('./containers/PvEContainer').default
+      const actions = require('../../modules/character').actions
 
+      store.dispatch(actions.loadCharacter(nextState.params.region, nextState.params.realm, nextState.params.name, ['progress']))
       /*  Return getComponent   */
       cb(null, PvE)
 
