@@ -1,7 +1,11 @@
 @import '../../../../../../styles/base';
 
 .character-items {
-  padding:1rem;
-  background: url('http://render-eu.worldofwarcraft.com/character/frostwolf/62/80594494-profilemain.jpg') no-repeat center center;
-  background-size:cover;
+  margin: 1rem 0;
+
+  .row:last-child {
+    .character-item {
+      margin: 0;
+    }
+  }
 }

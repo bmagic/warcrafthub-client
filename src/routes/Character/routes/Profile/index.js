@@ -10,7 +10,7 @@ export default (store) => ({
       const actions = require('../../modules/character').actions
 
       store.dispatch(actions.loadCharacter(nextState.params.region, nextState.params.realm, nextState.params.name,
-        ['items', 'averageItemLevel', 'averageItemLevelEquipped']))
+        ['items', 'averageItemLevel', 'averageItemLevelEquipped', 'thumbnail']))
 
       /*  Return getComponent   */
       cb(null, PvE)
