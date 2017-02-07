@@ -1,5 +1,5 @@
 import React from 'react'
-import {Panel, Row, Col} from 'react-bootstrap'
+import { Panel, Row, Col } from 'react-bootstrap'
 import ColoredItemIlvl from '../../../../../../components/ColoredItemIlvl'
 import CharacterT19Count from '../CharacterT19Count'
 import 'font-awesome/scss/font-awesome.scss'
@@ -11,12 +11,12 @@ export const CharacterItemSummary = (props) => (
     <Panel>
       <Row>
         <Col md={12}>
-          iLvl: <ColoredItemIlvl ilvl={props.averageItemLevelEquipped}/>
+          iLvl: <ColoredItemIlvl ilvl={props.averageItemLevelEquipped} />
         </Col>
       </Row>
       <Row>
         <Col md={12}>
-          iLvl bag: <ColoredItemIlvl ilvl={props.averageItemLevel}/>
+          iLvl bag: <ColoredItemIlvl ilvl={props.averageItemLevel} />
         </Col>
       </Row>
       <Row>
@@ -28,8 +28,7 @@ export const CharacterItemSummary = (props) => (
   </div>
 )
 
-
-CharacterItemSummary.defaultProps={
+CharacterItemSummary.defaultProps = {
   averageItemLevel: 0,
   averageItemLevelEquipped: 0,
   items:{},

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Col, Media} from 'react-bootstrap'
+import { Media } from 'react-bootstrap'
 import classnames from 'classnames'
 import './CharacterItem.scss'
 
@@ -7,13 +7,13 @@ export const CharacterItem = (props) => (
   <div className={classnames('character-item', props.side)}>
     <Media>
       {props.side === 'left' &&
-      <Media.Left align="top">
+      <Media.Left align='top'>
         <a href={'//www.wowhead.com/item=' + props.item.id}
-           rel={'bonus=' + props.item.bonusLists.join(':')}>
+          rel={'bonus=' + props.item.bonusLists.join(':')}>
           <img
             src={'http://' + props.region + '.media.blizzard.com/wow/icons/56/' + props.item.icon + '.jpg'}
-            title={props.item.name}/>
-          <span className={classnames('frame', 'quality-' + props.item.quality)}/>
+            title={props.item.name} />
+          <span className={classnames('frame', 'quality-' + props.item.quality)} />
         </a>
       </Media.Left>
       }
@@ -21,8 +21,8 @@ export const CharacterItem = (props) => (
         <Media.Heading>
           <div className={classnames('quality-' + props.item.quality)}>
             <a href={'//www.wowhead.com/item=' + props.item.id}
-               rel={'bonus=' + props.item.bonusLists.join(':')}>
-             {props.item.name}
+              rel={'bonus=' + props.item.bonusLists.join(':')}>
+              {props.item.name}
 
             </a>
           </div>
@@ -31,13 +31,13 @@ export const CharacterItem = (props) => (
         <div>{props.item.itemLevel}</div>
       </Media.Body>
       {props.side === 'right' &&
-      <Media.Right align="top">
+      <Media.Right align='top'>
         <a href={'//www.wowhead.com/item=' + props.item.id}
-           rel={'bonus=' + props.item.bonusLists.join(':')}>
+          rel={'bonus=' + props.item.bonusLists.join(':')}>
           <img
             src={'http://' + props.region + '.media.blizzard.com/wow/icons/56/' + props.item.icon + '.jpg'}
-            title={props.item.name}/>
-          <span className={classnames('frame', 'quality-' + props.item.quality)}/>
+            title={props.item.name} />
+          <span className={classnames('frame', 'quality-' + props.item.quality)} />
         </a>
       </Media.Right>
       }

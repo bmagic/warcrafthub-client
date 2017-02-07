@@ -18,7 +18,7 @@ class CharacterItems extends React.Component {
     })
 
     itemsRightKeys.forEach(function (key) {
-      itemsRight.push(<CharacterItem key={key} side={'right'}  region={region} slot={key} item={items[key]} />)
+      itemsRight.push(<CharacterItem key={key} side={'right'} region={region} slot={key} item={items[key]} />)
     })
 
     return (

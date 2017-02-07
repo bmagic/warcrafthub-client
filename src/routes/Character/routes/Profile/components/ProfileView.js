@@ -1,5 +1,5 @@
 import React from 'react'
-import {Row, Col, Panel} from 'react-bootstrap'
+import { Row, Col, Panel } from 'react-bootstrap'
 import CharacterItems from './CharacterItems'
 import CharacterItemSummary from './CharacterItemSummary'
 import CharacterItemIlvl from './CharacterItemIlvl'
@@ -12,10 +12,10 @@ export const ProfileView = (props) => {
           <Row>
             <Col md={12}>
               <CharacterItemIlvl averageItemLevel={props.character.data.averageItemLevel}
-                                 averageItemLevelEquipped={props.character.data.averageItemLevelEquipped}/>
+                averageItemLevelEquipped={props.character.data.averageItemLevelEquipped} />
             </Col>
             <Col md={12}>
-              <CharacterItems items={props.character.data.items} region={props.character.data.region}/>
+              <CharacterItems items={props.character.data.items} region={props.character.data.region} />
             </Col>
           </Row>
         </Col>
@@ -28,9 +28,9 @@ export const ProfileView = (props) => {
       <Row>
         <Col md={6}>
           <CharacterItemSummary averageItemLevel={props.character.data.averageItemLevel}
-                                averageItemLevelEquipped={props.character.data.averageItemLevelEquipped}
-                                items={props.character.data.items}
-                                class={props.character.data.class}
+            averageItemLevelEquipped={props.character.data.averageItemLevelEquipped}
+            items={props.character.data.items}
+            class={props.character.data.class}
           />
         </Col>
         <Col md={6}>
@@ -53,7 +53,7 @@ export const ProfileView = (props) => {
       </Row>
       <Row>
         <Col md={12}>
-          <CharacterItems items={props.character.data.items} region={props.character.data.region}/>
+          <CharacterItems items={props.character.data.items} region={props.character.data.region} />
         </Col>
       </Row>
       <Row>
