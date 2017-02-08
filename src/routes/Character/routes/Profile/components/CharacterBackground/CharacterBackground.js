@@ -30,7 +30,7 @@ CharacterBackground.propTypes = {
   thumbnail: React.PropTypes.string.isRequired,
   race: React.PropTypes.number.isRequired,
   region: React.PropTypes.string.isRequired,
-  children: React.PropTypes.element.isRequired
+  children: React.PropTypes.node.isRequired
 
 }
 

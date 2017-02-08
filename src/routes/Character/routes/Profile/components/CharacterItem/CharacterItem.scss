@@ -11,56 +11,9 @@
     }
     a {
       color: inherit;
-      img {
-        width: 47px;
-        height: 47px;
-      }
-      &:hover {
-        text-decoration: none;
-        color: $white;
-        .frame {
-          background-color: rgba(255, 255, 255, 0.2);
-        }
-      }
+
     }
-    .frame {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 49px;
-      height: 49px;
-      background: url(./assets/inventory-slots.png) no-repeat;
-      &.quality-0 {
-        background-position: -49px 0;
-      }
-      &.quality-1 {
-        background-position: -98px 0;
-      }
-      &.quality-2 {
-        background-position: -147px 0;
 
-      }
-      &.quality-3 {
-        background-position: -196px 0;
-
-      }
-      &.quality-4 {
-        background-position: -245px 0;
-
-      }
-      &.quality-5 {
-        background-position: -294px 0;
-
-      }
-      &.quality-6 {
-        background-position: -343px 0;
-
-      }
-      &.quality-7 {
-        background-position: -392px 0;
-
-      }
-    }
     .media-right {
       .frame {
         right: 0;

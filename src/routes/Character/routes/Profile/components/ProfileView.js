@@ -1,7 +1,8 @@
 import React from 'react'
-import { Row, Col, Panel } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import CharacterItems from './CharacterItems'
 import CharacterItemIlvl from './CharacterItemIlvl'
+import CharacterItemsAudit from './CharacterItemsAudit'
 
 export const ProfileView = (props) => {
   return (
@@ -20,9 +21,7 @@ export const ProfileView = (props) => {
           </Row>
         </Col>
         <Col md={4}>
-          <Panel>
-            Une colonne ici qui présente les infos utiles (T19, Audit)
-          </Panel>
+          <CharacterItemsAudit items={props.character.data.items} />
         </Col>
       </Row>
     </div>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Media } from 'react-bootstrap'
 import classnames from 'classnames'
+import WowheadItemLink from '../../../../../../components/WowheadItemLink'
+import CharacterItemIcon from '../CharacterItemIcon'
 import './CharacterItem.scss'
 
 export const CharacterItem = (props) => (
@@ -8,37 +10,34 @@ export const CharacterItem = (props) => (
     <Media>
       {props.side === 'left' &&
       <Media.Left align='top'>
-        <a href={'//www.wowhead.com/item=' + props.item.id}
-          rel={'bonus=' + props.item.bonusLists.join(':')}>
-          <img
-            src={'http://' + props.region + '.media.blizzard.com/wow/icons/56/' + props.item.icon + '.jpg'}
-            title={props.item.name} />
-          <span className={classnames('frame', 'quality-' + props.item.quality)} />
-        </a>
+        <WowheadItemLink id={props.item.id} bonusLists={props.item.bonusLists} enchant={props.item.enchant}
+          gems={props.item.gems}>
+          <CharacterItemIcon region={props.region} icon={props.item.icon} name={props.item.name}
+            quality={props.item.quality} slot={props.slot} />
+        </WowheadItemLink>
       </Media.Left>
       }
       <Media.Body>
         <Media.Heading>
           <div className={classnames('quality-' + props.item.quality)}>
-            <a href={'//www.wowhead.com/item=' + props.item.id}
-              rel={'bonus=' + props.item.bonusLists.join(':')}>
+            <WowheadItemLink id={props.item.id} bonusLists={props.item.bonusLists} enchant={props.item.enchant}
+              gems={props.item.gems}>
               {props.item.name}
-
-            </a>
+            </WowheadItemLink>
           </div>
-
         </Media.Heading>
-        <div>{props.item.itemLevel}</div>
+        {props.item.itemLevel !== 0 &&
+        <div>
+          <strong>{props.item.itemLevel}</strong>
+        </div>}
       </Media.Body>
       {props.side === 'right' &&
       <Media.Right align='top'>
-        <a href={'//www.wowhead.com/item=' + props.item.id}
-          rel={'bonus=' + props.item.bonusLists.join(':')}>
-          <img
-            src={'http://' + props.region + '.media.blizzard.com/wow/icons/56/' + props.item.icon + '.jpg'}
-            title={props.item.name} />
-          <span className={classnames('frame', 'quality-' + props.item.quality)} />
-        </a>
+        <WowheadItemLink id={props.item.id} bonusLists={props.item.bonusLists} enchant={props.item.enchant}
+          gems={props.item.gems}>
+          <CharacterItemIcon region={props.region} icon={props.item.icon} name={props.item.name}
+            quality={props.item.quality} slot={props.slot} />
+        </WowheadItemLink>
       </Media.Right>
       }
     </Media>
@@ -51,13 +50,12 @@ CharacterItem.defaultProps = {
     id: 0,
     bonusLists: [],
     icon: '',
-    name: 'n/a',
+    name: '',
     itemLevel: 0
   },
   slot: '',
   side: '',
   region: ''
-
 }
 
 CharacterItem.propTypes = {

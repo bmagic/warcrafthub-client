@@ -1,0 +1,16 @@
+@import '../../../../../../styles/base';
+
+.character-items-audit {
+  h2 {
+    font-size: 1.8rem;
+  }
+  .fa-times {
+    color: red;
+    width: 14px;
+  }
+  .fa-check {
+    color: green
+  }
+
+
+}

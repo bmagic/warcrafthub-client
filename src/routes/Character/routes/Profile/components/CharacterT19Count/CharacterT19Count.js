@@ -3,7 +3,6 @@ import React from 'react'
 export const CharacterT19Count = (props) => {
   let count = 0
   const t19 = {
-    1: 'Obsidian Aspect',
     2: 'Highlord',
     3: 'Eagletalon',
     4: 'Doomblade',
@@ -16,10 +15,10 @@ export const CharacterT19Count = (props) => {
     11: 'Astral Warden',
     12: 'Second Sight'
   }
-
   Object.keys(props.items).map(function (key) {
     var item = props.items[key]
     if (item.name && item.name.indexOf(t19[props.class]) >= 0) {
+      t19.push()
       count++
     }
   })
