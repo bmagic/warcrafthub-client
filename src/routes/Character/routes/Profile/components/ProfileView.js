@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 import CharacterItems from './CharacterItems'
 import CharacterItemIlvl from './CharacterItemIlvl'
 import CharacterItemsAudit from './CharacterItemsAudit'
+import CharacterT19 from './CharacterT19'
 
 export const ProfileView = (props) => {
   return (
@@ -22,6 +23,7 @@ export const ProfileView = (props) => {
         </Col>
         <Col md={4}>
           <CharacterItemsAudit items={props.character.data.items} />
+          <CharacterT19 items={props.character.data.items} class={props.character.data.class} />
         </Col>
       </Row>
     </div>

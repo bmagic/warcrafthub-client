@@ -1,15 +1,33 @@
 @import '../../../../../../styles/base';
 
 .character-items-audit {
+
   h2 {
     font-size: 1.8rem;
+    margin-bottom:0.5rem;
   }
-  .fa-times {
-    color: red;
-    width: 14px;
-  }
-  .fa-check {
-    color: green
+
+
+
+  .list {
+
+
+    .slot{
+      text-transform: capitalize;
+    }
+    .fa-times {
+      color: red;
+      width: 14px;
+      margin-right:1rem;
+      &.orange{
+        color:orange;
+      }
+    }
+
+    .fa-check {
+      color: green;
+      margin-right:1rem;
+    }
   }
 
 
