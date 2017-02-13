@@ -9,7 +9,7 @@ class CharacterRaidProgress extends React.Component {
     return (
       <div key={name + count + difficulty + timestamp} className='boss-line'>
         <Row>
-          <Col sm={5}>
+          <Col sm={6}>
             <strong>{name}</strong>
           </Col>
           <Col sm={2}>
@@ -18,7 +18,7 @@ class CharacterRaidProgress extends React.Component {
           <Col sm={1}>
             {count}
           </Col>
-          <Col sm={4}>
+          <Col sm={3}>
             {timestamp &&
             <Moment fromNow>{timestamp}</Moment>
             }
