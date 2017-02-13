@@ -1,0 +1,21 @@
+@import '../../../../../../styles/base';
+
+.character-progress {
+  margin-bottom:2rem;
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight:normal;
+  }
+
+  .current-progress {
+    border-bottom: 1px dotted $white;
+    cursor: pointer;
+  }
+
+  .boss-line{
+    border-bottom:1px solid $white;
+    padding: 0.5rem 2rem;
+    background-color: $black;
+  }
+}

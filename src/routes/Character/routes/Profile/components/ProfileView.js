@@ -9,10 +9,7 @@ export const ProfileView = (props) => {
   return (
     <div className='character-profile'>
       <Row>
-        <Col md={12}>
-          <CharacterItemIlvl averageItemLevel={props.character.data.averageItemLevel}
-            averageItemLevelEquipped={props.character.data.averageItemLevelEquipped} />
-        </Col>
+        <Col md={12} />
         <Col md={8}>
           <Row>
             <Col md={12}>
@@ -22,8 +19,11 @@ export const ProfileView = (props) => {
           </Row>
         </Col>
         <Col md={4}>
+          <CharacterItemIlvl averageItemLevel={props.character.data.averageItemLevel}
+            averageItemLevelEquipped={props.character.data.averageItemLevelEquipped} />
           <CharacterItemsAudit items={props.character.data.items} />
           <CharacterT19 items={props.character.data.items} class={props.character.data.class} />
+          //TODO artefact power & Guild history
         </Col>
       </Row>
     </div>

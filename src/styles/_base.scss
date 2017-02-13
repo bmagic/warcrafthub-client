@@ -10,12 +10,12 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
-
-@import './colors';
+@import './variables';
+@import './utils';
 @import './wow';
 @import './button';
 @import './nav';
 @import './panel';
-
+@import './tooltip';
 
 

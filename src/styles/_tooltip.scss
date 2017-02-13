@@ -1,0 +1,9 @@
+.tooltip {
+  &.in{opacity:1;}
+  .tooltip-inner{
+    background-color: $black;
+    border: 1px solid $white;
+    text-align: left;
+    border-radius: 0;
+  }
+}

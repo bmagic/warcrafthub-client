@@ -11,7 +11,6 @@ $monk: #00FF96;
 $druid: #FF7D0A;
 $demon_hunter: #a330c9;
 
-
 /* Warrior */
 .class-1 {
   color: $warrior
@@ -72,38 +71,54 @@ $demon_hunter: #a330c9;
   color: $demon_hunter;
 }
 
-$alliance:#0078FF;
-$horde:#B30000;
+$alliance: #0078FF;
+$horde: #B30000;
 /* Alliance */
-.faction-0{
+.faction-0 {
   color: $alliance
 }
 
 /* Horde */
-.faction-1{
+.faction-1 {
   color: $horde
 }
 
 /* Heirloom */
-.quality-7 { color: rgb(0, 204, 255) }
+.quality-heirloom, .quality-7 {
+  color: rgb(0, 204, 255)
+}
 
 /* Artifact */
-.quality-6 { color: rgb(230, 204, 128) }
+.quality-artifact, .quality-6 {
+  color: rgb(230, 204, 128)
+}
 
 /*Legendary*/
-.quality-5 { color: rgb(255, 128, 0) }
+.quality-legendary, .quality-5 {
+  color: rgb(255, 128, 0)
+}
 
 /* Epic */
-.quality-4 { color: rgb(163, 53, 238) }
+.quality-epic, .quality-4 {
+  color: rgb(163, 53, 238)
+}
 
 /* Rare */
-.quality-3 { color: rgb(0, 112, 255) }
+.quality-rare, .quality-3 {
+  color: rgb(0, 112, 255)
+}
 
 /* Uncommon */
-.quality-2 { color: rgb(30, 255, 0) }
+.quality-uncommon, .quality-2 {
+  color: rgb(30, 255, 0)
+}
 
 /* Common */
-.quality-1 { color: #666 }
+.quality-common, .quality-1 {
+  color: #666
+}
 
 /* No quality */
-.quality-0 { color: #FFF }
+.quality-no, .quality-0 {
+  color: #FFF
+}
