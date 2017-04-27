@@ -3,6 +3,7 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { IndexLink } from 'react-router'
 import LoadingBar from 'react-redux-loading-bar'
+import config from '../../config'
 
 import './Header.scss'
 
@@ -45,6 +46,7 @@ class Header extends React.Component {
               <LinkContainer to='/character/eu/Archimonde/Errrr'>
                 <NavItem >Error</NavItem>
               </LinkContainer>
+              <NavItem href={config.API_ROOT + 'users/auth/bnet'}>Login with bnet</NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
