@@ -101,8 +101,6 @@ class CharacterRaidProgress extends React.Component {
 }
 
 CharacterRaidProgress.propTypes = {
-  raid: React.PropTypes.object,
-  name: React.PropTypes.string
 }
 
 export default CharacterRaidProgress

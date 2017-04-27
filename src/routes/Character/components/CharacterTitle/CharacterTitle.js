@@ -33,8 +33,7 @@ CharacterTitle.propTypes = {
   realm: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
   faction: React.PropTypes.number.isRequired,
-  class_: React.PropTypes.number.isRequired,
-  level: React.PropTypes.number
+  class_: React.PropTypes.number.isRequired
 }
 
 export default CharacterTitle
