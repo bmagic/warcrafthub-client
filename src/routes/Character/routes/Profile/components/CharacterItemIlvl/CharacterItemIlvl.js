@@ -1,16 +1,20 @@
 import React from 'react'
+import { Panel } from 'react-bootstrap'
+
 import './CharacterItemIlvl.scss'
 
 export const CharacterItemIlvl = (props) => (
 
   <div className='character-item-ilvl'>
-    <div className='left'>
-      {props.averageItemLevel}
-    </div>
-    <div className='right'>
-      <div>average item level</div>
-      <div>(<strong>{props.averageItemLevelEquipped}</strong> equipped)</div>
-    </div>
+    <Panel>
+      <div className='left'>
+        {props.averageItemLevel}
+      </div>
+      <div className='right'>
+        <div>average item level</div>
+        <div>(<strong>{props.averageItemLevelEquipped}</strong> equipped)</div>
+      </div>
+    </Panel>
   </div>
 )
 
