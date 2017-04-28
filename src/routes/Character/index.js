@@ -1,10 +1,12 @@
 import { injectReducer } from '../../store/reducers'
 import Profile from './routes/Profile'
+import PvE from './routes/PvE'
 
 export default (store) => ({
   path : 'character/:region/:realm/:name',
   indexRoute  : Profile(store),
   childRoutes: [
+    PvE(store)
   ],
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
