@@ -12,8 +12,8 @@ class AppContainer extends Component {
     return false
   }
 
-  componentDidMount() {
-    document.body.classList.remove('preload');
+  componentDidMount () {
+    document.body.classList.remove('preload')
   }
 
   render () {

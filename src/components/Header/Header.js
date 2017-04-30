@@ -1,14 +1,8 @@
 import React from 'react'
-import { Navbar, Nav, NavItem } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
-import { IndexLink } from 'react-router'
 
-import LoadingBar from 'react-redux-loading-bar'
 import SearchBar from '../../components/SearchBar'
 import SideBarMenu from '../../components/SideBarMenu'
 import SideBarAccount from '../../components/SideBarAccount'
-
-import config from '../../config'
 
 import logo from './assets/logo.png'
 
@@ -21,48 +15,54 @@ class Header extends React.Component {
     this.state = {
       searchBar: false,
       sideBarMenu: false,
-      sideBarAccount: false,
+      sideBarAccount: false
     }
 
-    this.toggleSearchBar = this.toggleSearchBar.bind(this);
-    this.toggleSideBarMenu = this.toggleSideBarMenu.bind(this);
-    this.toggleSideBarAccount = this.toggleSideBarAccount.bind(this);
+    this.toggleSearchBar = this.toggleSearchBar.bind(this)
+    this.toggleSideBarMenu = this.toggleSideBarMenu.bind(this)
+    this.toggleSideBarAccount = this.toggleSideBarAccount.bind(this)
   }
 
-  toggleSearchBar() {
+  toggleSearchBar () {
     this.setState({
       searchBar: !this.state.searchBar
-    });
+    })
   }
 
-  toggleSideBarMenu() {
-    document.body.classList.toggle('sidebar-open');
+  toggleSideBarMenu () {
+    document.body.classList.toggle('sidebar-open')
     this.setState({
       sideBarMenu: !this.state.sideBarMenu
-    });    
+    })
   }
 
-  toggleSideBarAccount() {
-    document.body.classList.toggle('sidebar-open');
+  toggleSideBarAccount () {
+    document.body.classList.toggle('sidebar-open')
     this.setState({
       sideBarAccount: !this.state.sideBarAccount
-    });    
+    })
   }
 
   render () {
     return (
       <div>
-        <header className="header">
-          <a href="#" className="col" id="btn-open-navig" onClick={this.toggleSideBarMenu}><span><i className="fa fa-bars fa-xl"></i></span><span className="title">menu</span></a>
-          <a href="home.html" className="logo"><img src={logo} alt="" /></a>
-          <div className="col-vide"></div>
-          <a href="#" className="col" onClick={this.toggleSearchBar}><span><i className="fa fa-search fa-xl"></i></span><span className="title">Recherche</span></a>
-          <a href="#" className="col btn-open-navig-compte" onClick={this.toggleSideBarAccount}>
+        <header className='header'>
+          <a href='#' className='col' id='btn-open-navig' onClick={this.toggleSideBarMenu}>
+            <span><i className='fa fa-bars fa-xl' /></span>
+            <span className='title'>menu</span>
+          </a>
+          <a href='home.html' className='logo'><img src={logo} alt='' /></a>
+          <div className='col-vide' />
+          <a href='#' className='col' onClick={this.toggleSearchBar}>
+            <span><i className='fa fa-search fa-xl' /></span>
+            <span className='title'>Recherche</span>
+          </a>
+          <a href='#' className='col btn-open-navig-compte' onClick={this.toggleSideBarAccount}>
             <span>
-              <i className="fa fa-user fa-xl"></i>
+              <i className='fa fa-user fa-xl' />
             </span>
-            <span className="title">compte</span>
-            <span className="loggee"><i className="fa fa-circle"></i></span>
+            <span className='title'>compte</span>
+            <span className='loggee'><i className='fa fa-circle' /></span>
           </a>
         </header>
         <SideBarMenu toggleAction={this.toggleSideBarMenu} isOpen={this.state.sideBarMenu} />
