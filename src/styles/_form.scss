@@ -1,0 +1,10 @@
+button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: medium none;
+}
+
+input[type=search] {
+	border: 2px solid $borderInputColor;
+	background-color: $backgroundInputColor;
+	color: $textColor;
+}

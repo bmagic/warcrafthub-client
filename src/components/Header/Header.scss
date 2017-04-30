@@ -1,20 +1,71 @@
 @import '../../styles/base';
 
-.loading{
-  z-index: 10;
-  height: 2px;
-  background-color: $white;
-  position: absolute;
-}
-
-.navbar {
-  margin-bottom: 0;
-  background-color: $black;
-  border-radius: 0;
-  border: none;
-  border-bottom: 1px solid $white;
-
-  &.navbar-default .navbar-nav>li>a, .navbar-brand {
-    color: $white;
+.header {
+  display: table;
+  color: $black;
+  background-color: $backgroundHeaderColor;
+  border-bottom: 1px solid $borderColor;
+  width: 100%;
+  font-size: 0.7rem;
+  text-align: center;
+  letter-spacing: -0.03rem;
+  font-family: 'Titillium Web';
+  font-weight: 700;
+  .logo,.col3,.col {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .logo {
+    display: block;
+    width: 4rem;
+    text-align: center;
+    background-color: $backgroundHeaderColor;
+    img {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .col-vide {
+    width: 100%;
+  }
+  .col {
+    position: relative;
+    width: 4rem;
+    padding: 0 0.5rem;
+    /*border-left: 1px solid $grisclair;*/
+    .indication {
+      position: absolute;
+      top: 0.2rem;
+      right: 0.2rem;
+      color: #ffffff;
+      width: 1.1rem;
+      height: 1.1rem;
+      line-height: 1.1rem;
+      background-color: $backgroundHeaderColor;
+      border-radius: 1.2rem;
+    }
+    .loggee {
+      position: absolute;
+      top: 0rem;
+      right: 0.35rem;
+      
+      .fa {
+        color: $vert;
+      }
+    }
+  }
+  .title {
+    position: absolute; bottom: 0.3rem; left: 0rem; width: 100%; text-align: center; text-transform: uppercase;
+  }
+  .actif {
+    background-color: $grisclair;
+    border-top: 1px solid #cccccc;
+    padding-top: 0px;
+  }
+  span {
+    display: block;
   }
 }
+
+

@@ -1,0 +1,55 @@
+@import '../../styles/base';
+
+.footer {
+	background-color: $backgroundHeaderColor;
+	line-height: 1rem;
+	.block-social-network, .block-link-list, .block-blizzard-copyright {
+		background-color: $backgroundHeaderColor;
+		border-bottom: 1px solid $borderColor;
+		padding: 1rem;
+		font-family: 'Titillium Web';
+		a {
+			text-align: center;
+		}
+		.social-network {
+			display: inline-block;
+			width: 2.4rem;
+			height: 2.4rem;
+			background-color: $backgroundBlockColor;
+			border-radius: 50%;
+			i {
+				color: $grisclair;
+				line-height: 2.6rem;
+			}
+			.blog {
+				text-transform: uppercase;
+				font-size: 0.7rem;
+				line-height: 2.4rem;
+			}
+		}
+		.brand {
+			text-align: center;
+		}
+		.intitule {
+			float: left;
+			width: 40%;
+			padding-top: 0.6rem;
+		}
+		h5 {
+			margin-top: 1rem;
+		}
+		.link {
+			padding-bottom: 1rem;
+			font-family: 'Titillium Web';
+			a {
+				margin-left: 0.2rem;
+			}
+		}
+	}
+	.block-link-list {
+		padding-bottom: 0px;
+	}
+	.block-blizzard-copyright {
+		font-size: 0.8rem;
+	}
+}

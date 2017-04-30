@@ -1,0 +1,88 @@
+@import '../../styles/base';
+
+.field-search-home {
+	background-color: $backgroundHeaderColor;
+	padding: 0.5rem;
+	position: relative;
+	z-index: 20;
+	border-bottom: 1px solid $borderColor;
+	.search-icone {
+		position: absolute;
+		top: 1.1rem;
+		right: 1.2rem;
+		&.true {
+			color: $white;
+		}
+	}
+	.actif i {
+		color:$rouge; 
+	}
+	.result {
+		display: none;
+		position: absolute;
+		top: 2.5rem; left: 0rem;
+		padding: 0.5rem;
+		width: 100%;
+	}
+	h4 {
+		text-transform: uppercase;
+		font-family: 'TitilliumWeb-Bold';
+	}
+	ul {
+		padding-bottom: 0.5rem;
+		font-family: 'TitilliumWeb-SemiBold';
+	}
+	ul > li {
+		padding-bottom: 1.2rem;
+		span {
+			color: $rouge;
+			font-family: 'TitilliumWeb-Bold';
+		}
+	}
+	.bg {
+		background-color: $borderColor;
+		padding: 0.5rem 1rem 1rem 1rem;
+		box-shadow: 0px 2px 1px #cccccc;
+		width: 100%;
+	}
+	.encart-produit {
+		display: block;
+		background-color: #ffffff;
+		padding: 0.5rem;
+		margin-top: 0.8rem;
+		box-shadow: 0px 0px 3px #cccccc;
+		span {
+			display: block;
+			font-family: 'TitilliumWeb-Bold';
+			padding-left: 1rem;
+			padding-top: 0.3rem;
+		}
+		.prix {
+			margin-top: 1rem;
+			color: $rouge;
+		}
+	}
+	a {
+		display: inline-block;
+		width: 100%;
+	}
+}
+
+.overlay-search {
+	z-index: 10;
+	display: none;
+	position: fixed;
+	top: 0px;
+	left:0px;
+	width: 100%;
+	background-color: $backgroundHeaderColor;
+	height: 100%;
+	opacity: 0.7;
+}
+
+.field-search {
+  width: 100%;
+  border: none;
+  padding: 0.6rem 5rem 0.6rem 1rem;
+  background-color: #eeeeee;
+}

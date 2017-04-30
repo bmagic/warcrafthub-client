@@ -2,6 +2,8 @@
 @import '~normalize.css/normalize';
 
 @import url(//fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+@import url(//fonts.googleapis.com/css?family=Titillium+Web);
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
@@ -14,9 +16,8 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
-  background-color: $grey;
-  color: $white;
+  background-color: $backgroundColor;
+  color: $textColor;
 }
 
 *,
@@ -30,3 +31,27 @@ h1,h2,h3,h4{
   padding:0;
 }
 
+a {
+	text-decoration:none;
+	color: $textColor;
+}
+
+a:hover,a:focus,a:active {
+	text-decoration:none;
+	color: $textColor;
+	outline : none;
+}
+
+body.sidebar-open {
+  position: fixed;
+  width: 100%;
+}
+
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
+.fa-xl { font-size: 1.4rem; }
