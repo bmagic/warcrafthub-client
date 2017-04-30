@@ -4,7 +4,6 @@ import ErrorMessages from '../../../containers/ErrorMessages'
 import CharacterTitle from './CharacterTitle'
 import UpdateButton from '../../../containers/UpdateButton'
 import CharacterNav from './CharacterNav'
-import 'font-awesome/scss/font-awesome.scss'
 
 import './CharacterView.scss'
 class CharacterView extends React.Component {

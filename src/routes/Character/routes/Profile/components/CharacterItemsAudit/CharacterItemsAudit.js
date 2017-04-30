@@ -4,7 +4,6 @@ import classnames from 'classnames'
 import WowheadSpellLink from '../../../../../../components/WowheadSpellLink'
 import WowheadItemLink from '../../../../../../components/WowheadItemLink'
 
-import 'font-awesome/scss/font-awesome.scss'
 import './CharacterItemsAudit.scss'
 
 export const CharacterItemsAudit = (props) => {
