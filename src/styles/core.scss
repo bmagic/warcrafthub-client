@@ -41,11 +41,6 @@ a:hover,a:focus,a:active {
 	outline : none;
 }
 
-body.sidebar-open {
-  position: fixed;
-  width: 100%;
-}
-
 .preload * {
   -webkit-transition: none !important;
   -moz-transition: none !important;
@@ -53,4 +48,27 @@ body.sidebar-open {
   -o-transition: none !important;
 }
 
+.content {
+  padding-top: 15px;
+}
+
 .fa-xl { font-size: 1.4rem; }
+
+@media (max-width: 991px) {
+  body.sidebar-open {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  #btn-open-navig {
+    display: none;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}

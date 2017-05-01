@@ -26,7 +26,7 @@ class SideBarMenu extends React.Component {
         </div>
         <div className='sidebar-left'>
           <div className='menu-level1'>
-            <span className='intitule'>Ranking</span>
+            <span className='intitule'>Leaderboards</span>
             <div id='canape' className='ssmenu btn-ssmenu'>
               <a href='#' className='menu-item'><span className='title'>Raids</span></a>
             </div>

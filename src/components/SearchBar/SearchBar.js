@@ -41,14 +41,17 @@ class SearchBar extends React.Component {
     return (
       <div>
         <div className='overlay-search' id='overlay-search' style={overlayStyle} />
-        <div className='field-search-home' style={searchBarStyle}>
-          <input type='search' className='field-search' id='product-search' placeholder='Recherche joueur, guilde, ...'
-            onFocus={this.toggleFocus} onBlur={this.toggleFocus} />
-          <button type='submit' className={'search-icone ' + this.state.isFocus}>
-            <i className='fa fa-search fa-xl' />
-          </button>
-          <div className='result' id='search-result'>
-            <div className='bg' />
+        <div className='container'>
+          <div className='field-search-home' style={searchBarStyle}>
+            <input type='search' className='field-search' id='product-search'
+              placeholder='Recherche joueur, guilde, ...'
+              onFocus={this.toggleFocus} onBlur={this.toggleFocus} />
+            <button type='submit' className={'search-icone ' + this.state.isFocus}>
+              <i className='fa fa-search fa-xl' />
+            </button>
+            <div className='result' id='search-result'>
+              <div className='bg' />
+            </div>
           </div>
         </div>
       </div>

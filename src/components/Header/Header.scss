@@ -2,7 +2,7 @@
 
 .header {
   display: table;
-  color: $black;
+  color: $textColor;
   background-color: $backgroundHeaderColor;
   border-bottom: 1px solid $borderColor;
   width: 100%;
@@ -11,12 +11,17 @@
   letter-spacing: -0.03rem;
   font-family: 'Titillium Web';
   font-weight: 700;
+  .container {
+    display: table;
+    padding: 0px;
+  }
   .logo,.col3,.col {
     display: table-cell;
     vertical-align: middle;
   }
   .logo {
-    display: block;
+    display: inline-block;
+    float: left;
     width: 4rem;
     text-align: center;
     background-color: $backgroundHeaderColor;
@@ -24,14 +29,18 @@
       display: block;
       width: 100%;
       margin: 0 auto;
+      padding: 15px;
     }
   }
   .col-vide {
     width: 100%;
   }
   .col {
+    &.account {
+      max-width: 5rem;
+    }
     position: relative;
-    width: 4rem;
+    width: 5rem;
     padding: 0 0.5rem;
     /*border-left: 1px solid $grisclair;*/
     .indication {
@@ -55,6 +64,9 @@
       }
     }
   }
+  .col:hover {
+    color: $white;
+  }
   .title {
     position: absolute; bottom: 0.3rem; left: 0rem; width: 100%; text-align: center; text-transform: uppercase;
   }
@@ -69,3 +81,63 @@
 }
 
 
+@media (min-width: 992px) {
+  .header {
+    .container {
+      display: flex;
+      //align-items: center;
+
+      .logo {
+        margin-right: 15px;
+      }
+
+      .col {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 1rem;
+        width: auto;
+        cursor: pointer;
+      }
+      .push-right {
+        margin-right: auto;
+      }
+
+      .title {
+        position: initial;
+        margin-top: 4px;
+      }
+
+      .angle-down {
+        position: absolute;
+        top: 1rem;
+        right: 0.65rem;
+        
+        .fa {
+          font-size: 17px;
+        }
+      }
+
+      .dropdown {
+        color: $textColor;
+        position: absolute;
+        top: 100%;
+        background-color: $backgroundHeaderColor;
+        text-align: left;
+        min-width: 200px;
+        z-index: 40;
+        left: -0.25rem;
+
+        .title {
+          padding: 10px 1.25rem;
+          text-align: left;
+          display: block;
+        }
+
+        .title:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}
