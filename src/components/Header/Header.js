@@ -95,7 +95,7 @@ class Header extends React.Component {
                 <a className='title' href='#'>Guilds</a>
               </div>
             </span>
-            <a href='#' className='col hidden-xs hidden-sm push-right' onClick={this.toggleSearchBar}>
+            <a href='#' className='col hidden-xs hidden-sm push-right'>
               <span><i className='fa fa-pie-chart fa-xl' /></span>
               <span className='title'>Parsing</span>
             </a>
