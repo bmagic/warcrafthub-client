@@ -1,143 +1,230 @@
 @import '../../styles/variables';
 
 .header {
-  display: table;
-  color: $textColor;
-  background-color: $backgroundHeaderColor;
-  border-bottom: 1px solid $borderColor;
-  width: 100%;
-  font-size: 0.7rem;
-  text-align: center;
-  letter-spacing: -0.03rem;
-  font-family: 'Titillium Web';
-  font-weight: 700;
-  .container {
-    display: table;
-    padding: 0px;
-  }
-  .logo,.col3,.col {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .logo {
-    display: inline-block;
-    float: left;
-    width: 4rem;
-    text-align: center;
-    background-color: $backgroundHeaderColor;
-    img {
-      display: block;
-      width: 100%;
-      margin: 0 auto;
-      padding: 15px;
-    }
-  }
-  .col-vide {
-    width: 100%;
-  }
-  .col {
-    &.account {
-      max-width: 5rem;
-    }
-    position: relative;
-    width: 5rem;
-    padding: 0 0.5rem;
-    /*border-left: 1px solid $grisclair;*/
-    .indication {
-      position: absolute;
-      top: 0.2rem;
-      right: 0.2rem;
-      color: #ffffff;
-      width: 1.1rem;
-      height: 1.1rem;
-      line-height: 1.1rem;
-      background-color: $backgroundHeaderColor;
-      border-radius: 1.2rem;
-    }
-    .loggee {
-      position: absolute;
-      top: 0rem;
-      right: 0.35rem;
-      
-      .fa {
-        color: $vert;
-      }
-    }
-  }
-  .col:hover {
-    color: $white;
-  }
-  .title {
-    position: absolute; bottom: 0.3rem; left: 0rem; width: 100%; text-align: center; text-transform: uppercase;
-  }
-  .actif {
-    background-color: $grisclair;
-    border-top: 1px solid #cccccc;
-    padding-top: 0px;
-  }
-  span {
-    display: block;
-  }
+	header {
+		padding: 40px;
+		background: rgb( 20,25,33 ); 
+		background: -moz-linear-gradient( top, rgba( 20,25,33,1 ) 50%, rgba( 32,42,54,1 ) 100% ); 
+		background: -webkit-linear-gradient( top, rgba( 20,25,33,1 ) 50%, rgba( 32,42,54,1 ) 100% ); 
+		background: linear-gradient( to bottom, rgba( 20,25,33,1 ) 50%, rgba( 32,42,54,1 ) 100% ); 
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141921', endColorstr='#202a36',GradientType=0 );
+	}
+
+	.background-dark {
+		background: rgba( 0,0,0,0.6 );
+	}
+
+	.logo {
+		font-family: Helvetica, Arial;
+		letter-spacing: 15px !important;
+		max-width: 635px;
+		text-align: center;
+		display: block;
+		margin: auto;
+		width: 100%;
+		padding: 30px 30px 20px 30px;
+	}
+
+	.menu {
+		list-style: none; 
+		padding: 0;
+
+		&.horizontal {
+			li {
+				display: inline-block;
+				padding: 0 18px;
+				position: relative;
+			}
+		}
+
+		.active {
+			color: $white !important;
+		}
+
+		.wide {
+			width: 450px;
+		}
+
+		input {
+	    width: 100%;
+	    color: $white;
+	    border: 1px solid rgba( 255,255,255,0.2 );
+	    background: rgba( 0,0,0,0.2 );
+	    padding: 8px 8px;
+	    margin: 10px 0;
+		}
+
+		a {
+			color: $gray;
+
+			&:hover {
+				color: $blueLink;
+				text-decoration: none;
+			}
+		}
+
+		i {
+			&.fa {
+				margin-right: 5px;
+			}
+		}
+
+		ul {
+			color: $gray;
+			text-align: center;
+			list-style: none; 
+			padding: 0;
+
+			li {
+				position: relative; 
+				padding-bottom: 25px !important;
+
+				&:last-child {
+					ul {
+						left: auto;
+						right: 0;
+
+						li {
+							&:first-child:before {
+								left: auto;
+								right: 17px; 
+							}
+						}
+					}
+				}
+
+				&:hover {
+					ul {
+						display: inline-block;
+					}
+				}
+			}
+
+			ul {
+				display: none; 
+				width: 220px;
+				position: absolute;
+				top: 30px;
+				background: #333a44;
+				left: 0;
+				border-radius: 5px;
+
+				&.right {
+					left: auto;
+					right: 0;
+
+					li:first-child:before {
+						left: auto;
+						right: 17px; 
+					}
+				}
+
+				li {
+					text-align: left;
+					width: 100%;
+					padding: 10px 25px !important;
+					border-bottom: 1px solid rgba( 0,0,0,0.3 );
+
+					&:first-child {
+
+						border-top-left-radius: 5px;
+						border-top-right-radius: 5px;
+
+						&:before {
+							content: '';
+							background: #333a44; 
+							display: block; 
+							height: 16px; 
+							width: 16px; 
+							border-radius: 4px;
+							position: absolute;
+							transform: rotate( 45deg );
+							top: -6px;
+							left: 17px;
+						}
+					}
+
+					&:last-child {
+						border-bottom-left-radius: 5px;
+						border-bottom-right-radius: 5px;
+					}
+
+					&:hover {
+						background: #318ec5;
+
+						a {
+							color: $white;
+						}
+					}
+
+					&:hover:before {
+						background: #318ec5;
+					}
+				}
+			}
+		}
+	}
 }
 
+@media ( max-width: 992px ) {
+	.header {
+		.menu {
+			ul {
+				position: relative;
+				top: 10px;
+			}
 
-@media (min-width: 992px) {
-  .header {
-    .container {
-      display: flex;
-      //align-items: center;
+			i {
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 45px;
+			}
 
-      .logo {
-        margin-right: 15px;
-      }
+			a {
+				&.home:before {
+					content: 'W';
+				}
 
-      .col {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 0 1rem;
-        width: auto;
-        cursor: pointer;
-      }
-      .push-right {
-        margin-right: auto;
-      }
+				span {
+					position: absolute;
+					left: 45px;
+					right: 0;
+					bottom: 25px;
+					font-size: 9px;
+					width: 20px;
+					padding: 2px 5px;
+				}
+			}
+		}
+	}
+}
 
-      .title {
-        position: initial;
-        margin-top: 4px;
-      }
+@media ( max-width: 767px ) {
+	.header {
+		header {
+			padding: 10px;
+			display: table;
+			width: 100%;
 
-      .angle-down {
-        position: absolute;
-        top: 1rem;
-        right: 0.65rem;
-        
-        .fa {
-          font-size: 17px;
-        }
-      }
+			.menu {
+				display: none;
+			}
 
-      .dropdown {
-        color: $textColor;
-        position: absolute;
-        top: 100%;
-        background-color: $backgroundHeaderColor;
-        text-align: left;
-        min-width: 200px;
-        z-index: 40;
-        left: -0.25rem;
+			.col {
+				display: table-cell;
+				position: relative;
+			  padding: 10px;
+			  vertical-align: middle;
+			}
 
-        .title {
-          padding: 10px 1.25rem;
-          text-align: left;
-          display: block;
-        }
+			.logo {
+				max-width: 260px;
+			}
 
-        .title:hover {
-          color: $white;
-        }
-      }
-    }
-  }
+			.fa {
+				font-size: 18px;
+			}
+		}
+	}
 }

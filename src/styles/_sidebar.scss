@@ -32,7 +32,6 @@
   opacity: 0;
 	span {
 		display: block;
-		font-size: 0.7rem;
 		padding-top: 0.3rem;
 	}
 }
@@ -47,7 +46,6 @@
 }
 
 .sidebar-left {
-  font-family: 'Titillium Web';
   position: absolute;
   top: 0px;
   width: 84%;
@@ -105,29 +103,14 @@
 		padding: 0.4rem 0.7rem;
 		background-color: $backgroundColor;
 		text-transform: uppercase;
-		font-family: 'Titillium Web';
 		font-weight: 700;
 		color: $textColor;
-		font-size: 0.8rem;
 	}
-	.menu-promos {
-		display: block;
-		padding: 1rem 0.7rem;
-		background-color: $rose;
-		color: $textColor;
-		border-bottom: 1px solid $borderColor;
-	}
-	.menu-styles {
-		display: block;
-		padding: 1rem 0.7rem;
-		background-color: $orange;
-		color: $textColor;
-	}
+	
 	.menu-item,.menu-item2 {
 		display: table;
 		width: 100%;
 		
-		font-size: 1.2rem;
 		.col,span {
 			display: table-cell;
 			vertical-align: middle;
@@ -142,8 +125,7 @@
 			width: 100%;
 		}
 		h6 {
-			font-size: 0.8rem;
-			color: $gris;
+			color: $gray;
 		}
 	}
 	.menu-item {
@@ -172,7 +154,6 @@
 			padding-bottom: 10px;
 		}
 		.h3 {
-			font-size: 1.6rem;
 			padding: 1rem 0 1rem 0;
 			line-height: 1.6rem;
 		}

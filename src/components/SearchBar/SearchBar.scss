@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .field-search-home {
-	background-color: $backgroundHeaderColor;
+	background-color: #333a44;
 	padding: 0.5rem;
 	position: relative;
 	z-index: 20;
@@ -13,9 +13,6 @@
 		&.true {
 			color: $white;
 		}
-	}
-	.actif i {
-		color:$rouge; 
 	}
 	.result {
 		display: none;
@@ -35,7 +32,6 @@
 	ul > li {
 		padding-bottom: 1.2rem;
 		span {
-			color: $rouge;
 			font-family: 'TitilliumWeb-Bold';
 		}
 	}
@@ -56,10 +52,6 @@
 			font-family: 'TitilliumWeb-Bold';
 			padding-left: 1rem;
 			padding-top: 0.3rem;
-		}
-		.prix {
-			margin-top: 1rem;
-			color: $rouge;
 		}
 	}
 	a {

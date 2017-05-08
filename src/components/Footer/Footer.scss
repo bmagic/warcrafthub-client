@@ -1,55 +1,50 @@
 @import '../../styles/variables';
 
 .footer {
-	background-color: $backgroundHeaderColor;
-	line-height: 1rem;
-	.block-social-network, .block-link-list, .block-blizzard-copyright {
-		background-color: $backgroundHeaderColor;
-		border-bottom: 1px solid $borderColor;
-		padding: 1rem;
-		font-family: 'Titillium Web';
-		a {
-			text-align: center;
+	box-shadow: inset 0 1px rgba( 0,0,0,0.3 );
+	background: rgba( 0,0,0,0.30 );
+	color: $white;
+
+	.social-network {
+		div {
+			position: relative;
+			padding: 20px;
 		}
-		.social-network {
-			display: inline-block;
-			width: 2.4rem;
-			height: 2.4rem;
-			background-color: $backgroundBlockColor;
-			border-radius: 50%;
-			i {
-				color: $grisclair;
-				line-height: 2.6rem;
-			}
-			.blog {
-				text-transform: uppercase;
-				font-size: 0.7rem;
-				line-height: 2.4rem;
-			}
+
+		.patreon {
+			border-top: 1px solid rgba(255,255,255,0.08);
+			background: #e6472e;
 		}
-		.brand {
-			text-align: center;
-		}
-		.intitule {
-			float: left;
-			width: 40%;
-			padding-top: 0.6rem;
-		}
-		h5 {
-			margin-top: 1rem;
-		}
-		.link {
-			padding-bottom: 1rem;
-			font-family: 'Titillium Web';
+	}
+
+	.disclaimer {
+		padding: 40px;
+		background: rgba( 0,0,0,0.30 );
+		color: rgba( 255, 255, 255, 0.4 );
+
+		ul {
+			list-style: none;
+			padding: 0px 20px 0px 20px;
+
 			a {
-				margin-left: 0.2rem;
+				color: rgba( 255, 255, 255, 0.4 );
+
+				&:hover {
+					color: $white;
+				}
 			}
 		}
 	}
-	.block-link-list {
-		padding-bottom: 0px;
-	}
-	.block-blizzard-copyright {
-		font-size: 0.8rem;
+}
+
+@media (max-width: 768px) { 
+	.footer {
+		.disclaimer {
+			ul {
+				li {
+
+				}
+			}
+		}
 	}
 }

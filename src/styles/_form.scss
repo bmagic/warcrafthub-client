@@ -4,7 +4,7 @@ button {
 }
 
 input[type=search] {
-	border: 2px solid $borderInputColor;
-	background-color: $backgroundInputColor;
+	border: 1px solid hsla(0,0%,100%,.2);
+	background-color: rgba(0,0,0,.2);
 	color: $textColor;
 }
