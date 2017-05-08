@@ -4,7 +4,7 @@ import SearchBar from '../../components/SearchBar'
 import SideBarMenu from '../../components/SideBarMenu'
 import SideBarAccount from '../../components/SideBarAccount'
 
-import logo from './assets/logo.png'
+import logo from './assets/logo.svg'
 
 import './Header.scss'
 
@@ -60,80 +60,61 @@ class Header extends React.Component {
 
   render () {
     return (
-      <div>
-        <header className='header'>
-          <div className='container'>
-            <a href='#' className='col' id='btn-open-navig' onClick={this.toggleSideBarMenu}>
-              <span><i className='fa fa-bars fa-xl' /></span>
-              <span className='title'>menu</span>
-            </a>
-            <a href='/' className='logo'><img src={logo} alt='' /></a>
-            {/* <div className='col-vide' /> */}
-            <a href='#' className='col hidden-xs hidden-sm'>
-              <span><i className='fa fa-home fa-xl' /></span>
-              <span className='title'>Home</span>
-            </a>
-            <span className='col hidden-xs hidden-sm' onClick={() => this.toggleDropdown('dropdown-1')}>
-              <span><i className='fa fa-area-chart fa-xl' /></span>
-              <span className='title'>Leaderboards</span>
-              <span className='angle-down'>
-                <i className={'fa ' + (this.state.dropDown !== 'dropdown-1' ? ' fa-angle-down' : 'fa-angle-up')} />
-              </span>
-              <div className={'dropdown' + (this.state.dropDown !== 'dropdown-1' ? ' hide' : '')}>
-                <a className='title' href='#'>Raids</a>
-                <a className='title' href='#'>Mythic+</a>
-              </div>
+      <section className='header'>
+        <header>
+          <nav className='horizontal menu'>
+            <ul className='gray'>
+              <li><a href='#' className='active'><i className='fa fa-home' aria-hidden='true' /> Home</a></li>
+              <li><a href='#'><i className='fa fa-area-chart' aria-hidden='true' /> Leaderboards</a>
+                <ul>
+                  <li><a href='#'>Raids</a></li>
+                  <li><a href='#'>Mythic+</a></li>
+                </ul>
+              </li>
+              <li><a href='#'><i className='fa fa-flag' aria-hidden='true' /> Recruitment</a>
+                <ul>
+                  <li><a href='#'>Characters</a></li>
+                  <li><a href='#'>Guilds</a></li>
+                </ul>
+              </li>
+              <li><a href='#'><i className='fa fa-pie-chart' aria-hidden='true' /> Parsing</a></li>
+              <li><a href='#'><i className='fa fa-search' aria-hidden='true' /> Search</a>
+                <ul className='right wide'>
+                  <li><input type='text' /></li>
+                </ul>
+              </li>
+              <li><a href='#'><i className='fa fa-user' aria-hidden='true' /> Account</a>
+                <ul>
+                  <li><a href='#'>Characters / Guilds</a></li>
+                  <li><a href='#'>Discord Webhooks</a></li>
+                  <li><a href='#'>Settings</a></li>
+                  <li className='background-dark'><a href='#'>Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <a href='#' className='col hidden-sm hidden-md hidden-lg' id='btn-open-navig'
+            onClick={this.toggleSideBarMenu}>
+            <span><i className='fa fa-bars fa-xl' /></span>
+          </a>
+          <object className='col logo' data={logo} type='image/svg+xml'>
+            <h1><span>W</span>arcraft<strong>Hub</strong></h1>
+          </object>
+          <a href='#' className='col hidden-sm hidden-md hidden-lg' onClick={this.toggleSearchBar}>
+            <span><i className='fa fa-search fa-xl' /></span>
+          </a>
+          <a href='#' className='col hidden-sm hidden-md hidden-lg account btn-open-navig-compte'
+            onClick={this.toggleSideBarAccount} >
+            <span>
+              <i className='fa fa-user fa-xl' />
             </span>
-            <span className='col hidden-xs hidden-sm' onClick={() => this.toggleDropdown('dropdown-2')}>
-              <span><i className='fa fa-flag fa-xl' /></span>
-              <span className='title'>Recruitment</span>
-              <span className='angle-down'>
-                <i className={'fa ' + (this.state.dropDown !== 'dropdown-2' ? ' fa-angle-down' : 'fa-angle-up')} />
-              </span>
-              <div className={'dropdown' + (this.state.dropDown !== 'dropdown-2' ? ' hide' : '')}>
-                <a className='title' href='#'>Characters</a>
-                <a className='title' href='#'>Guilds</a>
-              </div>
-            </span>
-            <a href='#' className='col hidden-xs hidden-sm push-right'>
-              <span><i className='fa fa-pie-chart fa-xl' /></span>
-              <span className='title'>Parsing</span>
-            </a>
-            <a href='#' className='col' onClick={this.toggleSearchBar}>
-              <span><i className='fa fa-search fa-xl' /></span>
-              <span className='title'>search</span>
-            </a>
-            <a href='#' className='col account btn-open-navig-compte hidden-md hidden-lg'
-              onClick={this.toggleSideBarAccount} >
-              <span>
-                <i className='fa fa-user fa-xl' />
-              </span>
-              <span className='title'>account</span>
-              <span className='loggee'><i className='fa fa-circle' /></span>
-            </a>
-            <span href='#' className='col account btn-open-navig-compte hidden-xs hidden-sm'
-              onClick={() => this.toggleDropdown('dropdown-3')} >
-              <span>
-                <i className='fa fa-user fa-xl' />
-              </span>
-              <span className='title'>account</span>
-              <span className='loggee'><i className='fa fa-circle' /></span>
-              <span className='angle-down'>
-                <i className={'fa ' + (this.state.dropDown !== 'dropdown-3' ? ' fa-angle-down' : 'fa-angle-up')} />
-              </span>
-              <div className={'dropdown' + (this.state.dropDown !== 'dropdown-3' ? ' hide' : '')}>
-                <a className='title' href='#'>Manage characters / guilds</a>
-                <a className='title' href='#'>Discord Webhooks</a>
-                <a className='title' href='#'>Settings</a>
-                <a className='title' href='#'>Logout</a>
-              </div>
-            </span>
-          </div>
+            {/* <span className='loggee'><i className='fa fa-circle' /></span> */}
+          </a>
         </header>
         <SideBarMenu toggleAction={this.toggleSideBarMenu} isOpen={this.state.sideBarMenu} />
         <SideBarAccount toggleAction={this.toggleSideBarAccount} isOpen={this.state.sideBarAccount} />
         <SearchBar isOpen={this.state.searchBar} />
-      </div>
+      </section>
     )
   }
 }
