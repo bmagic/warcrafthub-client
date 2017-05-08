@@ -43,6 +43,14 @@
 
 		.wide {
 			width: 450px;
+
+			li:hover {
+				background-color: #333a44 !important;
+			}
+
+			li:hover:before {
+				background-color: #333a44 !important;
+			}
 		}
 
 		input {
